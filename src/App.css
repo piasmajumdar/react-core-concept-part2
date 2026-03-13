@@ -196,3 +196,10 @@ button {
 button:hover {
   transform: scale(1.1);
 }
+
+.card {
+  border: 2px solid gold;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+}
