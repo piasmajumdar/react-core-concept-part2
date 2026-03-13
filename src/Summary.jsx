@@ -12,6 +12,11 @@
  * 
 */
 
+/**
+ * 1. Just write a simple fetch with json conversion
+ * 2. Wrap the data loading component under Suspense
+*/
+
 // fetch("https://jsonplaceholder.typicode.com/users")
 //     .then((res) => res.json())
 //     .then((data) => console.log(data));
