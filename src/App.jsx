@@ -1,6 +1,7 @@
 import Name from "./Name";
 import Counter from "./Counter"
 import './App.css'
+import Batsman from "./Batsman";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <>
       <h3>React + Vite</h3>
 
+      <Batsman></Batsman>
       <Counter></Counter>
       <Name></Name>
 
