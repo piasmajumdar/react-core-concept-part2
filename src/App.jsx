@@ -1,3 +1,4 @@
+import Counter from "./Counter"
 import './App.css'
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
   return (
     <>
       <h3>React + Vite</h3>
+
+      <Counter></Counter>
+
+
       {/* <button onclick= "handeClick()">Click Me</button> */}
       <button onClick={handleClick}>Click Me</button>
       <button onClick={function handleClick2(){
