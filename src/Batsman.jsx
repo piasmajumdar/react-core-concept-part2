@@ -28,7 +28,7 @@ export default function Batsman(){
             <h3>Player: Bangla Batsman</h3>
             <small>Six: {sixes}</small>
             {
-                runs > 50 && <p>Congratulations!! You scored 50</p>
+                runs > 50 && runs<56 && <p>Congratulations!! You scored 50</p>
             }
             <h1>Score: {runs}</h1>
             <button onClick={handleSingle}>Singles</button>
