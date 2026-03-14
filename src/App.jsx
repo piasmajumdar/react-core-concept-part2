@@ -6,13 +6,19 @@ import './App.css'
 import { Suspense } from "react";
 import Friends from "./Friends";
 import Bowler from "./Bowler";
+import Posts from "./Posts";
 
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
   .then((res) => res.json())
 
-const fetchFriend = async()=> {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+// const fetchFriend = async()=> {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/users");
+//   return res.json();
+// }
+
+const fetchPosts = async()=> {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   return res.json();
 }
 
@@ -32,7 +38,8 @@ function App() {
     alert(newNum);
   }
 
-  const friendsPromise = fetchFriend(); 
+  // const friendsPromise = fetchFriend(); 
+  const postsPromise = fetchPosts();
 
   return (
     <>
@@ -42,8 +49,12 @@ function App() {
         <Users fetchUsers={fetchUsers}></Users>
       </Suspense>
 
-      <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
+      {/* <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
         <Friends friendsPromise= {friendsPromise}></Friends>
+      </Suspense> */}
+
+      <Suspense fallback={<h2>Posts are loading....</h2>}>
+        <Posts postsPromise={postsPromise}></Posts>
       </Suspense>
 
       <Batsman></Batsman>
