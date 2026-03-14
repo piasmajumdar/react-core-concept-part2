@@ -14,7 +14,9 @@
 
 /**
  * 1. Just write a simple fetch with json conversion
- * 2. Wrap the data loading component under Suspense
+ * 2. Wrap the data loading component under Suspense with fallback
+ * 3. Send the promise to that component
+ * 4. Component will read the data by 'use'
 */
 
 // fetch("https://jsonplaceholder.typicode.com/users")

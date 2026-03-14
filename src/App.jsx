@@ -4,10 +4,16 @@ import Batsman from "./Batsman";
 import Users from "./Users";
 import './App.css'
 import { Suspense } from "react";
+import Friends from "./Friends";
 
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
   .then((res) => res.json())
+
+const fetchFriend = async()=> {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return res.json();
+}
 
 
 function App() {
@@ -25,12 +31,18 @@ function App() {
     alert(newNum);
   }
 
+  const friendsPromise = fetchFriend(); 
+
   return (
     <>
       <h3>React + Vite</h3>
 
       <Suspense fallback={<h3>Loading...</h3>}>
         <Users fetchUsers={fetchUsers}></Users>
+      </Suspense>
+
+      <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
+        <Friends friendsPromise= {friendsPromise}></Friends>
       </Suspense>
 
       <Batsman></Batsman>
