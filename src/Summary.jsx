@@ -35,5 +35,5 @@
  * 2. state
  * 3. Data  load from API
  * 4. loop through to display data
- * 5. why we use ley prop
+ * 5. why we use key prop
 */
