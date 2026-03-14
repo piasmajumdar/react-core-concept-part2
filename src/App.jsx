@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import Friends from "./Friends";
 import Bowler from "./Bowler";
 import Posts from "./Posts";
-
+import Todos from "./Todos";
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
   .then((res) => res.json())
@@ -17,11 +17,15 @@ const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
 //   return res.json();
 // }
 
-const fetchPosts = async()=> {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+// const fetchPosts = async()=> {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//   return res.json();
+// }
+
+const fetchTodos= async()=>{
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   return res.json();
 }
-
 
 function App() {
 
@@ -39,7 +43,8 @@ function App() {
   }
 
   // const friendsPromise = fetchFriend(); 
-  const postsPromise = fetchPosts();
+  // const postsPromise = fetchPosts();
+  const todosPromise = fetchTodos();
 
   return (
     <>
@@ -53,8 +58,12 @@ function App() {
         <Friends friendsPromise= {friendsPromise}></Friends>
       </Suspense> */}
 
-      <Suspense fallback={<h2>Posts are loading....</h2>}>
+      {/* <Suspense fallback={<h2>Posts are loading....</h2>}>
         <Posts postsPromise={postsPromise}></Posts>
+      </Suspense> */}
+
+      <Suspense fallback={<h2 className="card">Todos are loading...</h2>}>
+        <Todos todosPromise={todosPromise}></Todos>
       </Suspense>
 
       <Batsman></Batsman>
