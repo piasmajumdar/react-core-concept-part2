@@ -9,6 +9,7 @@ import Bowler from "./Bowler";
 import Posts from "./Posts";
 import Todos from "./Todos";
 import Comments from "./Comments";
+import Players from "./Players";
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
   .then((res) => res.json())
@@ -28,10 +29,10 @@ const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
 //   return res.json();
 // }
 
-const fetchComments = async()=>{
-  const res = await fetch("https://jsonplaceholder.typicode.com/comments");
-  return res.json();
-}
+// const fetchComments = async()=>{
+//   const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+//   return res.json();
+// }
 
 
 function App() {
@@ -52,7 +53,7 @@ function App() {
   // const friendsPromise = fetchFriend(); 
   // const postsPromise = fetchPosts();
   // const todosPromise = fetchTodos();
-  const commentsPromise = fetchComments();
+  // const commentsPromise = fetchComments();
 
   return (
     <>
@@ -74,9 +75,11 @@ function App() {
         <Todos todosPromise={todosPromise}></Todos>
       </Suspense> */}
 
-      <Suspense fallback={<h3>Comments are loading...</h3>}>
+      {/* <Suspense fallback={<h3>Comments are loading...</h3>}>
         <Comments commentsPromise={commentsPromise}></Comments>
-      </Suspense>
+      </Suspense> */}
+
+      <Players></Players>
 
       <Batsman></Batsman>
       <Bowler></Bowler>
